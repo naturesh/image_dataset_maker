@@ -2,7 +2,7 @@
 - **The easiest way to build an image dataset**
 
 ## *Desc*
-  - We make one reference vector by normalizing the vector of the reference image, text, and compare the cosine similarity, where the vector embedding uses the ViT-32 model.
+  - We make one reference vector by normalizing the vector of the reference image, text, and compare the cosine similarity, where the vector embedding uses the ViT-B-32 model.
   - Use all images from query's Google Image search results.
   - Too many image search results may cause errors.
 
