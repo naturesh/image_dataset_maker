@@ -32,13 +32,14 @@ class Client():
         if headless:
             self.options.add_argument('--headless')
 
-    def get_images(self, query):
+    def get_images(self, query, scroll = -1):
 
         browser = self.browser(service=self.service, options=self.options)
         browser.get(f'https://www.google.com/search?q={query}&source=hp&sclient=img&udm=2')
 
 
         while True:
+
 
             browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 
@@ -48,6 +49,9 @@ class Client():
             time.sleep(0.5)
 
             if len(self._get_image_elements_from_source(browser.page_source)) == len(images): break
+                
+            if (scroll == 0): break
+            else: scroll -= 1
 
         browser.close()
 
