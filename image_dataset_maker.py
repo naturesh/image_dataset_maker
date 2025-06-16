@@ -40,7 +40,6 @@ class Client():
 
         while True:
 
-
             browser.execute_script("window.scrollTo(0, document.body.scrollHeight)")
 
             images = self._get_image_elements_from_source(browser.page_source)
